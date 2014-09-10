@@ -1,21 +1,3 @@
-
-%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% This is the LaTeX source for the instructions to authors using
-% the LaTeX document class 'llncs.cls' for contributions to
-% the Lecture Notes in Computer Sciences series.
-% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
-%
-% It may be used as a template for your own input - copy it
-% to a new file with a new name and use it as the basis
-% for your article.
-%
-% NB: the document class 'llncs' has its own and detailed documentation, see
-% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \documentclass[runningheads,a4paper]{llncs}
 
 \usepackage{amssymb}
@@ -23,9 +5,10 @@
 \usepackage{graphicx}
 
 \usepackage{url}
-\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
-\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
-\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+\urldef{\mailsa}\path|{amherag, mario}@tectijuana.edu.mx,alejandra.mancilla@gmail.com|
+%\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+%\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+%\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
 
@@ -34,12 +17,12 @@
 \mainmatter  % start of an individual contribution
 
 % first the title is needed
-\title{Lecture Notes in Computer Science:\\Authors' Instructions
-for the Preparation\\of Camera-Ready
-Contributions\\to LNCS/LNAI/LNBI Proceedings}
+\title{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
 
 % a short form should be given in case it is too long for the running head
-\titlerunning{Lecture Notes in Computer Science: Authors' Instructions}
+\titlerunning{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
 
 % the name(s) of the author(s) follow(s) next
 %
@@ -47,25 +30,21 @@ Contributions\\to LNCS/LNAI/LNBI Proceedings}
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{Alfred Hofmann%
-\thanks{Please note that the LNCS Editorial assumes that all authors have used
-the western naming convention, with given names preceding surnames. This determines
-the structure of the names in the running heads and the author index.}%
-\and Ursula Barth\and Ingrid Haas\and Frank Holzwarth\and\\
-Anna Kramer\and Leonie Kunz\and Christine Rei\ss\and\\
-Nicole Sator\and Erika Siebert-Cole\and Peter Stra\ss er}
+\author{Amaury Hernandez-Aguila%
+\and Mario Garcia-Valdez\and Alejandra Mancilla}
 %
-\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}
+\authorrunning{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next; don't give your e-mail address
 % unless you accept that it will be published
-\institute{Springer-Verlag, Computer Science Editorial,\\
-Tiergartenstr. 17, 69121 Heidelberg, Germany\\
+\institute{Instituto Tecnológico de Tijuana\\
+Calzada Tecnologico s/n, Tijuana, Mexico\\
 \mailsa\\
 \mailsb\\
 \mailsc\\
-\url{http://www.springer.com/lncs}}
+\url{}}
 
 %
 % NB: a more complex sample for affiliations and the mapping to the
@@ -83,366 +62,235 @@ Tiergartenstr. 17, 69121 Heidelberg, Germany\\
 The abstract should summarize the contents of the paper and should
 contain at least 70 and at most 150 words. It should be written using the
 \emph{abstract} environment.
-\keywords{We would like to encourage you to list your keywords within
-the abstract section}
+\keywords{Affective Computing, Intelligent Learning Environments, Keystroke Dynamics, Mouse Dynamics}
 \end{abstract}
 
 
 \section{Introduction}
+ 
+The recognition, and simulation of human affects are becoming important fields of study, as many researchers have demonstrated that affective computers can provide better performance in assisting humans, and enhance a computers' abilities to make decisions \cite{affective-computing}. There are works describing different approaches for the recognition and simulation of affective states in human beings. For example, El Kaliouby, R., and Robinson, P. \cite{facial-expressions} proposed a system based on Dynamic Bayesian Networks that attained at recognizing affective states from a video stream of facial expressions and head gestures in real-time. As an example of the simulation of affective states, Becker-Asano, C., and Wachsmuth, I. \cite{affective-simulation} created MAX, a virtual human that simulates emotions in congruence to the mood of the person that interacts with it.
 
-You are strongly encouraged to use \LaTeXe{} for the
-preparation of your camera-ready manuscript together with the
-corresponding Springer class file \verb+llncs.cls+. Only if you use
-\LaTeXe{} can hyperlinks be generated in the online version
-of your manuscript.
+It didn't take long before these techniques were implemented as part of Intelligent Learning Environments (ILE). With the promise of an enhanced learning experience, researchers began studying the consequences of creating affect-sensitive ILEs. D'Mello, S., et al. \cite{autotutor} present the development of an affect-sensitive Intelligent Tutoring System (ITS) called AutoTutor, which recognizes the emotions of a learner by monitoring conversational cues, gross body language, and facial features, and attempts to address the presence of negative emotional states with empathetic and motivational statements. Additionaly, Drummond, J., and Litman, D. \cite{zoning-out} explain a method based on machine learning classification models to asses if a student is zoning out during a spoken learning task.
 
-The \LaTeX{} source of this instruction file for \LaTeX{} users may be
-used as a template. This is
-located in the ``authors'' subdirectory in
-\url{ftp://ftp.springer.de/pub/tex/latex/llncs/latex2e/instruct/} and
-entitled \texttt{typeinst.tex}. There is a separate package for Word 
-users. Kindly send the final and checked source
-and PDF files of your paper to the Contact Volume Editor. This is
-usually one of the organizers of the conference. You should make sure
-that the \LaTeX{} and the PDF files are identical and correct and that
-only one version of your paper is sent. It is not possible to update
-files at a later stage. Please note that we do not need the printed
-paper.
+But as more ILEs embrace these methodologies and techniques pertaining to the field of study known as Affective Computing \cite{affective-computing}, a problem arises. In order to perform a recognition of the users' affective states, a sensor must be used to gather data. Frequently, these sensors can be considered as intrusive or invasive \cite{intrusive1} \cite{intrusive2} \cite{intrusive3}, and can disrupt the learning experience of a student. In this work, a method is proposed for the recognition of affective states based on Keystroke and Mouse Dynamics. Keyboard and mouse input devices should address the problem of the intrusive nature of most sensors, as the vast majority of an ILE's users should be familiarized with the use of this hardware equipment nowadays, and should not regard them as an abnormal factor in the learning environment. Other advantages are their low cost, and high accessibility.
 
-We would like to draw your attention to the fact that it is not possible
-to modify a paper in any way, once it has been published. This applies
-to both the printed book and the online version of the publication.
-Every detail, including the order of the names of the authors, should
-be checked before the paper is sent to the Volume Editors.
+Research works related to Keystroke Dynamics (KD) are carried out either using fixed-texts, or free-texts \cite{free-text-fixed-text}. KD performed on fixed-texts involves the recognition of typing patterns when typing a preestablished fixed-length text, e.g., a password. In the other case, free-text KD achieves the recognition of typing patterns when typing an arbitrary-length text, e.g., a description of an item. However, as noted by Janakiraman, R., and Sim, T. \cite{fixed-is-better}, most of the research regarding KD is done on fixed-text input, the reason being that fixed-text KD usually yields better results than free-text KD. Yet, the authors of this work share the opinion with Janakiraman, R., and Sim, T., that it would be more useful if KD can handle free text as well as fixed text.
 
-\subsection{Checking the PDF File}
+As a proof of the usefulness of free-text KD, the method for the recognition of affective states presented in this work is performed in an ITS focused on the teaching of software programming, where students need to input arbitrary-length source code. In this ITS, a student is required to solve a series of programming excercises, and, according to a feature vector extracted from the processed Keystroke and Mouse Dynamics data, a classification of two affective states (boredom and frustration) of the student is accomplished. This classification involves determining if a student was experiencing or not, or being indifferent to, each of the two affective states during the resolution of the programming excercises. With the proposed method, an ILE can predict a learner's affective states, and create better user models in order to provide adaptive, affect-sensitive content.
 
-Kindly assure that the Contact Volume Editor is given the name and email
-address of the contact author for your paper. The Contact Volume Editor
-uses these details to compile a list for our production department at
-SPS in India. Once the files have been worked upon, SPS sends a copy of
-the final pdf of each paper to its contact author. The contact author is
-asked to check through the final pdf to make sure that no errors have
-crept in during the transfer or preparation of the files. This should
-not be seen as an opportunity to update or copyedit the papers, which is
-not possible due to time constraints. Only errors introduced during the
-preparation of the files will be corrected.
+The structure of this work is organized as follows: Section \ref{related-work}
 
-This round of checking takes place about two weeks after the files have
-been sent to the Editorial by the Contact Volume Editor, i.e., roughly
-seven weeks before the start of the conference for conference
-proceedings, or seven weeks before the volume leaves the printer's, for
-post-proceedings. If SPS does not receive a reply from a particular
-contact author, within the timeframe given, then it is presumed that the
-author has found no errors in the paper. The tight publication schedule
-of LNCS does not allow SPS to send reminders or search for alternative
-email addresses on the Internet.
+\section{Related Work}
+\label{related-work}
 
-In some cases, it is the Contact Volume Editor that checks all the final
-pdfs. In such cases, the authors are not involved in the checking phase.
+Bosch, N., D'Mello, S., and Mills, C. \cite{emotions-novices-programming} analyzed the relationship between affective states and performance of novice programmers when they were learning the basics of computer programming in the Python language. The results of their study indicated that the major emotions students experienced were engaged, confusion, frustration, and boredom, with 23\%, 22\%, 14\%, and 12\% of the students experiencing these emotions, respectively. It was useful to consider these results, as it gives evidence of what affective states to be targeted in order to obtain less biased data. For example, if a rare emotion was chosen, a classifier could opt to classify any feature vector as not experiencing such emotion. Nevertheless, the classifier would obtain terrific results, although the classifier would be terrible at determining if a feature vector was actually experiencing the given affective state.
 
-\subsection{Additional Information Required by the Volume Editor}
+Similar to the previous work, Rodrigo, M.M.T., et al. \cite{emotions-novices-programming2} observed which affective states and behaviors relate to student's achievement within a Computer Science course. The authors found that confusion, boredom and egagement in IDE-related on-task conversation are associated with lower achievement.
 
-If you have more than one surname, please make sure that the Volume Editor
-knows how you are to be listed in the author index.
+Although the use of Keystroke Dynamics (KD) can be found in several research works as a biometric measure, its use as a mechanism for identifying affective states is rare in comparison. Epp, C., Lippold, M., and Mandryk, R.L. \cite{keystroke-dynamics1} effectively used KD in conjunction with decision-tree classifiers for the identification of 15 affective states. Although their work was based on fixed-text KD, their decisions on how to extract a feature set from the data generated by the KD process was a great inspiration for the proposed method in this work. As for free-text KD, Bixler, R., and D'Mello, S. \cite{keystroke-dynamics2} present a method for the identification of boredom and engagement based on several classification models.
 
-\subsection{Copyright Forms}
+Regarding Mouse Dynamics (MD), some research has been conducted for the identification of affective states, although, as with the case of KD, MD is mainly used as a biometric measure for authentication processes. Salmeron-Majadas, S., Santos, O.C., and Boticario, J.G. \cite{mouse-dynamics1} use both MD and KD to predict four affective states using five different classification algorithms. Bakhtiyari, K., and Husain, H. \cite{mouse-dynamics2} discuss a method based on fuzzy models for the recognition of emotions through KD, MD and touch-screen interactions. For a broad review of emotion recognition methods based on KD and MD, the work by Kolakowska, A. \cite{keystroke-mouse-review} is recommended.
 
-The copyright form may be downloaded from the ``For Authors"
-(Information for LNCS Authors) section of the LNCS Website:
-\texttt{www.springer.com/lncs}. Please send your signed copyright form
-to the Contact Volume Editor, either as a scanned pdf or by fax or by
-courier. One author may sign on behalf of all of the other authors of a
-particular paper. Digital signatures are acceptable.
+It has to be mentioned that a numerous list of works pertaining to affect-aware ILEs exists, but the following remarkable works are presented: Woolf, B., et al. \cite{affect-aware-general1} describe an approach to redress the cognitive versus affective imbalance in teaching systems; San Pedro, M.O.Z., et al. \cite{affect-aware-general2} present a method based on classifiers that predicts student affect and knowledge; and lastly, Wang, C.Y., et al. \cite{affect-aware-general3} propose an approach to develop an emotionally interactive learning system, where learners can express their emotions by mouse-clicking.
 
-\section{Paper Preparation}
+\section{Proposed Method}
+\label{proposed-method}
 
-Springer provides you with a complete integrated \LaTeX{} document class
-(\texttt{llncs.cls}) for multi-author books such as those in the LNCS
-series. Papers not complying with the LNCS style will be reformatted.
-This can lead to an increase in the overall number of pages. We would
-therefore urge you not to squash your paper.
+An Intelligent Tutoring System (ITS) was built to obtain the necessary data (it can be found online at http://app.protoboard.org/). The ITS's course begins with three introductory videos that explain the fundamentals of programming in Python, and how to solve the programming exercises in the course. What follows after these videos are ten programming exercises, that the students need to solve in a consecutive manner.
 
-Please always cancel any superfluous definitions that are
-not actually used in your text. If you do not, these may conflict with
-the definitions of the macro package, causing changes in the structure
-of the text and leading to numerous mistakes in the proofs.
+In Figure \ref{protoboard}, the interface of this ITS is presented. On the left, a navigation tree is shown, where students can click on the different learning objects that the course contains. On the right, a text processor is embedded, where students can try to solve the programming exercise described below.
 
-If you wonder what \LaTeX{} is and where it can be obtained, see the
-``\textit{LaTeX project site}'' (\url{http://www.latex-project.org})
-and especially the webpage ``\textit{How to get it}''
-(\url{http://www.latex-project.org/ftp.html}) respectively.
-
-When you use \LaTeX\ together with our document class file,
-\texttt{llncs.cls},
-your text is typeset automatically in Computer Modern Roman (CM) fonts.
-Please do
-\emph{not} change the preset fonts. If you have to use fonts other
-than the preset fonts, kindly submit these with your files.
-
-Please use the commands \verb+\label+ and \verb+\ref+ for
-cross-references and the commands \verb+\bibitem+ and \verb+\cite+ for
-references to the bibliography, to enable us to create hyperlinks at
-these places.
-
-For preparing your figures electronically and integrating them into
-your source file we recommend using the standard \LaTeX{} \verb+graphics+ or
-\verb+graphicx+ package. These provide the \verb+\includegraphics+ command.
-In general, please refrain from using the \verb+\special+ command.
-
-Remember to submit any further style files and
-fonts you have used together with your source files.
-
-\subsubsection{Headings.}
-
-Headings should be capitalized
-(i.e., nouns, verbs, and all other words
-except articles, prepositions, and conjunctions should be set with an
-initial capital) and should,
-with the exception of the title, be aligned to the left.
-Words joined by a hyphen are subject to a special rule. If the first
-word can stand alone, the second word should be capitalized.
-
-Here are some examples of headings: ``Criteria to Disprove
-Context-Freeness of Collage Language", ``On Correcting the Intrusion of
-Tracing Non-deterministic Programs by Software", ``A User-Friendly and
-Extendable Data Distribution System", ``Multi-flip Networks:
-Parallelizing GenSAT", ``Self-determinations of Man".
-
-\subsubsection{Lemmas, Propositions, and Theorems.}
-
-The numbers accorded to lemmas, propositions, and theorems, etc. should
-appear in consecutive order, starting with Lemma 1, and not, for
-example, with Lemma 11.
-
-\subsection{Figures}
-
-For \LaTeX\ users, we recommend using the \emph{graphics} or \emph{graphicx}
-package and the \verb+\includegraphics+ command.
-
-Please check that the lines in line drawings are not
-interrupted and are of a constant width. Grids and details within the
-figures must be clearly legible and may not be written one on top of
-the other. Line drawings should have a resolution of at least 800 dpi
-(preferably 1200 dpi). The lettering in figures should have a height of
-2~mm (10-point type). Figures should be numbered and should have a
-caption which should always be positioned \emph{under} the figures, in
-contrast to the caption belonging to a table, which should always appear
-\emph{above} the table; this is simply achieved as matter of sequence in
-your source.
-
-Please center the figures or your tabular material by using the \verb+\centering+
-declaration. Short captions are centered by default between the margins
-and typeset in 9-point type (Fig.~\ref{fig:example} shows an example).
-The distance between text and figure is preset to be about 8~mm, the
-distance between figure and caption about 6~mm.
-
-To ensure that the reproduction of your illustrations is of a reasonable
-quality, we advise against the use of shading. The contrast should be as
-pronounced as possible.
-
-If screenshots are necessary, please make sure that you are happy with
-the print quality before you send the files.
-\begin{figure}
-\centering
-\includegraphics[height=6.2cm]{eijkel2}
-\caption{One kernel at $x_s$ (\emph{dotted kernel}) or two kernels at
-$x_i$ and $x_j$ (\textit{left and right}) lead to the same summed estimate
-at $x_s$. This shows a figure consisting of different types of
-lines. Elements of the figure described in the caption should be set in
-italics, in parentheses, as shown in this sample caption.}
-\label{fig:example}
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=10cm]{protoboard.png}}
+  \label{protoboard}
+  \caption{Interface of the Intelligent Tutoring System}
 \end{figure}
 
-Please define figures (and tables) as floating objects. Please avoid
-using optional location parameters like ``\verb+[h]+" for ``here".
+\FloatBarrier
 
-\paragraph{Remark 1.}
+\subsubsection{Capturing the Keystroke and Mouse Data}
 
-In the printed volumes, illustrations are generally black and white
-(halftones), and only in exceptional cases, and if the author is
-prepared to cover the extra cost for color reproduction, are colored
-pictures accepted. Colored pictures are welcome in the electronic
-version free of charge. If you send colored figures that are to be
-printed in black and white, please make sure that they really are
-legible in black and white. Some colors as well as the contrast of
-converted colors show up very poorly when printed in black and white.
+While a student is trying to solve an exercise, a script coded in JavaScript is running in the background, which captures every keystroke, mouse movement and mouse button press. Each capture of these events records a date in milliseconds (using the method getTime() of JavaScript's built-in object Date) that describes when the event occurred. If the event is a keystroke, the script captures what key was specifically pressed (a JavaScript key code), and what type of event occurred (it can be either a key-down or a key-up event). If it is an event related to a mouse button press, the key code of that button is recorded, as well as the type of event occurred (key-down or key-up). Finally, if the event was a mouse movement, the mouse coordinates inside of the web browser is recorded. The script monitors the mouse position every 100 milliseconds, and if the position has changed, it records the new position.
 
-\subsection{Formulas}
+\subsubsection{Capturing the Affective States}
 
-Displayed equations or formulas are centered and set on a separate
-line (with an extra line or halfline space above and below). Displayed
-expressions should be numbered for reference. The numbers should be
-consecutive within each section or within the contribution,
-with numbers enclosed in parentheses and set on the right margin --
-which is the default if you use the \emph{equation} environment, e.g.,
-\begin{equation}
-  \psi (u) = \int_{o}^{T} \left[\frac{1}{2}
-  \left(\Lambda_{o}^{-1} u,u\right) + N^{\ast} (-u)\right] dt \;  .
-\end{equation}
+In order to determine what affective states a student was experiencing, an Experience Sampling Method (ESM) was used \cite{esm}. After the students successfully solve a programming exercise, they are presented with an ESM survey that asks what they were feeling during their solving of the exercise. A very brief description is given about what to do in this survey, followed by two statements the students need to answer according to how they were feeling. As an example, the statement ''I was feeling frustrated'' is presented, and a student needs to answer either ''Strongly agree,'' ''Agree,'' ''Neutral,'' ''Disagree,'' and ''Strongly Disagree.'' The full ESM survey is presented in Figure \ref{esm-survey}.
 
-Equations should be punctuated in the same way as ordinary
-text but with a small space before the end punctuation mark.
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=10cm]{esm.png}}
+  \label{esm-survey}
+  \caption{Experience Sampling Method}
+\end{figure}
 
-\subsection{Footnotes}
+\FloatBarrier
 
-The superscript numeral used to refer to a footnote appears in the text
-either directly after the word to be discussed or -- in relation to a
-phrase or a sentence -- following the punctuation sign (comma,
-semicolon, or period). Footnotes should appear at the bottom of
-the
-normal text area, with a line of about 2~cm set
-immediately above them.\footnote{The footnote numeral is set flush left
-and the text follows with the usual word spacing.}
+\subsubsection{Preprocessing of the Keystroke and Mouse Data}
 
-\subsection{Program Code}
+The raw data obtained from the JavaScript script needs to be preprocessed in a way that results in a feature vector. Basically, this preprocessing consists in measuring the delays between key-down or key-up events of the keystrokes and mouse button presses a student performed during an exercise. The averages and standard deviations are calculated for each of these delays. To calculate these delays, the keystrokes are grouped in digraphs and trigraphs, as it is a common practice when dealing with Keystroke Dynamics \cite{digraph-trigraph}.
 
-Program listings or program commands in the text are normally set in
-typewriter font, e.g., CMTT10 or Courier.
+As most of the mouse button presses performed by a web site user are left button clicks, only these button presses are considered. To calculate the average and standard deviations of these presses, the delays between key-down and a key-up events of the left button clicks are used.
 
-\medskip
+In addition to these averages and standard deviations of the delays between keystrokes and mouse button presses, the average and standard deviations of the number of total events contained in a digraph and a trigraph are calculated. These features are proposed and explained by Epp, C., Lippold, M., and Mandryk, R.L. in \cite{keystroke-dynamics1}. Most of the times, a digraph should contain four events, while a trigraph should contain six events. However, some times an individual can start a digraph or a trigraph before ending the previous one. This additional features represent these particular cases, and could be meaningful for the estimation of an individual's affective states.
 
-\noindent
-{\it Example of a Computer Program}
-\begin{verbatim}
-program Inflation (Output)
-  {Assuming annual inflation rates of 7%, 8%, and 10%,...
-   years};
-   const
-     MaxYears = 10;
-   var
-     Year: 0..MaxYears;
-     Factor1, Factor2, Factor3: Real;
-   begin
-     Year := 0;
-     Factor1 := 1.0; Factor2 := 1.0; Factor3 := 1.0;
-     WriteLn('Year  7% 8% 10%'); WriteLn;
-     repeat
-       Year := Year + 1;
-       Factor1 := Factor1 * 1.07;
-       Factor2 := Factor2 * 1.08;
-       Factor3 := Factor3 * 1.10;
-       WriteLn(Year:5,Factor1:7:3,Factor2:7:3,Factor3:7:3)
-     until Year = MaxYears
-end.
-\end{verbatim}
-%
-\noindent
-{\small (Example from Jensen K., Wirth N. (1991) Pascal user manual and
-report. Springer, New York)}
+Regarding the mouse movements, the average and standard deviation of the duration of each mouse movement, and the averages and standard deviations of the movements in the X and Y axes, are calculated.
 
-\subsection{Citations}
+Lastly, a final feature is added to preprocessing of the data. The ITS recorded how many attempts a student required before successfully solving an exercise. This number of attempts is included in the final feature vector.
 
-For citations in the text please use
-square brackets and consecutive numbers: \cite{jour}, \cite{lncschap},
-\cite{proceeding1} -- provided automatically
-by \LaTeX 's \verb|\cite| \dots\verb|\bibitem| mechanism.
+The final feature vector consists of 39 features.
 
-\subsection{Page Numbering and Running Heads}
+%% \begin{center}
+%%   \label{feature-vector}
+%%   \begin{table}
+%%     \caption{Tabla de características usadas}
+%%   \tiny
+%%   \begin{tabular}{| p{4cm} | p{8.2cm} |}
+%%     \hline
+%%     Nombre & Descripción \\ \hline
+%%     2G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da (keydown) tecla en un dígrafo\\ \hline
+%%     2G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+%%     tecla en un dígrafo \\ \hline
+%%     2G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_1KeyLat\_MEAN &  Tiempo promedio entre la 1ra (keyup) y el
+%%     siguiente keydown en un dígrafo \\ \hline
+%%     2G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+%%     tecla en un dígrafo \\ \hline
+%%     2G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_Dur\_MEAN & Tiempo promedio entre el primer keydown y el último
+%%     keyup de un dígrafo \\ \hline
+%%     2G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+%%     un dígrafo \\ \hline
+%%     2G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da
+%%     (keydown) teclas de un trígrafo \\ \hline
+%%     3G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+%%     tecla en un trígrafo \\ \hline
+%%     3G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1KeyLat\_MEAN & Tiempo promedio entre el keyup de la 1ra tecla y
+%%     el siguiente keydown en un trígrafo\\ \hline
+%%     3G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2D2D\_MEAN & Tiempo promedio entre la 2da (keydown) y 3ra
+%%     (keydown) teclas en un trígrafo \\ \hline
+%%     3G\_2D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+%%     tecla en un trígrafo \\ \hline
+%%     3G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2KeyLat\_MEAN & Tiempo promedio entre el keyup de la 2da tecla y
+%%     el siguiente keydown en un trígrafo\\ \hline
+%%     3G\_2KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_3Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la
+%%     última tecla en un trígrafo \\ \hline
+%%     3G\_3Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_Dur\_MEAN & Tiempo promedio entre el keydown de la 1ra tecla y
+%%     el último keyup en un trígrafo \\ \hline
+%%     3G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+%%     un trígrafo \\ \hline
+%%     3G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Presses\_Dur\_MEAN & Tiempo promedio entre el keydown y keyup
+%%     de algún botón del ratón \\ \hline
+%%     Mouse\_Presses\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_Dur\_MEAN & Tiempo promedio de todos los movimientos
+%%     del ratón\\ \hline
+%%     Mouse\_Movement\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_X\_MEAN & Promedio de la distancia recorrida en
+%%     pixeles en la coordenada X por el ratón \\ \hline
+%%     Mouse\_Movement\_X\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_Y\_MEAN & Promedio de la distancia recorrida en
+%%     pixeles en la coordenada Y por el ratón \\ \hline
+%%     Mouse\_Movement\_Y\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Attempts & Número de intentos requeridos para llegar a la
+%%     solución del ejercicio \\ \hline
+%%   \end{tabular}
+%%   \end{table}
+%% \end{center}
 
-There is no need to include page numbers. If your paper title is too
-long to serve as a running head, it will be shortened. Your suggestion
-as to how to shorten it would be most welcome.
+\subsubsection{Preprocessing of the Affective States}
 
-\section{LNCS Online}
+The answers ''Strongly agree,'' and ''Agree'' were grouped into a single ''Agree'' class. The same was performed for the answers ''Strongly disagree,'' and ''Disagree.'' As a result, the feature vectors are now classified as either ''Agree,'' ''Neutral,'' or ''Disagree'', for each of the two affective states. The reason behind this decision is that the classifiers were performing poorly for such a big set of possible classes.
 
-The online version of the volume will be available in LNCS Online.
-Members of institutes subscribing to the Lecture Notes in Computer
-Science series have access to all the pdfs of all the online
-publications. Non-subscribers can only read as far as the abstracts. If
-they try to go beyond this point, they are automatically asked, whether
-they would like to order the pdf, and are given instructions as to how
-to do so.
+\subsubsection{Classification}
 
-Please note that, if your email address is given in your paper,
-it will also be included in the meta data of the online version.
+The feature vectors need to undergo an optimization process. This process consists on using a Genetic Algorithm to determine a subset of features that facilitates a classifier to obtain good results (this is explained in more detail in Section \ref{experiment}). The resulting feature vector is used as input to a classifier based on the k-Nearest Neighbors (k-NN) algorithm. In the end, two classifiers are trained: one for the frustration affective state, and another one for boredom.
 
-\section{BibTeX Entries}
+\section{Experiment}
+\label{experiment}
 
-The correct BibTeX entries for the Lecture Notes in Computer Science
-volumes can be found at the following Website shortly after the
-publication of the book:
-\url{http://www.informatik.uni-trier.de/~ley/db/journals/lncs.html}
+55 students with basic knowledge in software programming were asked to take the course presented in the ITS. Their participation generated a total of 142 feature vectors, meaning that each student solved an average of 2.58 exercises. The 39 features were associated with the answers of the ESM surveys the students had to answer after each exercise. As a result, the 142 feature vectors were used to train a classifier for each affective state. Each of these classifiers have the task of estimating if a given feature vector corresponds to either an ''Agree,'' ''Neutral,'' or ''Disagree'' class, for the frustration and boredom affective states.
 
-\subsubsection*{Acknowledgments.} The heading should be treated as a
-subsubsection heading and should not be assigned a number.
+At a first attempt at training the classifiers, bad results were being obtained. Accuracies of 50\% and below were frequent with each of the attempts, as well as Kappa Coefficients below 0.1.
 
-\section{The References Section}\label{references}
+The solution to this problem was performing a selection of a subset of features in the feature vector. The hypothesis was that the classifiers were performing bad because of the high number of features, and because of the possible irrelevant features, i.e., features that don't help the classifier to improve its results. This preprocessing of the feature vector was done with RapidMiner's Optimize Selection operator based in Genetic Algorithms. Even with a population size of 700, the training and validation process had to be run several times before determining a satisfactory subset of features for both classifiers.
 
-In order to permit cross referencing within LNCS-Online, and eventually
-between different publishers and their online databases, LNCS will,
-from now on, be standardizing the format of the references. This new
-feature will increase the visibility of publications and facilitate
-academic research considerably. Please base your references on the
-examples below. References that don't adhere to this style will be
-reformatted by Springer. You should therefore check your references
-thoroughly when you receive the final pdf of your paper.
-The reference section must be complete. You may not omit references.
-Instructions as to where to find a fuller version of the references are
-not permissible.
+For the validation of the results, 10-Fold Cross Validation was used.
 
-We only accept references written using the latin alphabet. If the title
-of the book you are referring to is in Russian or Chinese, then please write
-(in Russian) or (in Chinese) at the end of the transcript or translation
-of the title.
+\section{Results}
 
-The following section shows a sample reference list with entries for
-journal articles \cite{jour}, an LNCS chapter \cite{lncschap}, a book
-\cite{book}, proceedings without editors \cite{proceeding1} and
-\cite{proceeding2}, as well as a URL \cite{url}.
-Please note that proceedings published in LNCS are not cited with their
-full titles, but with their acronyms!
+The results obtained with this method are very satisfactory, considering free-text KD was used. The accuracies and Kapppa Coefficients obtained are close to what is usually obtained in fixed-text KD methods (for example, the results presented in \cite{keystroke-dynamics1}), and far superior to other research works involving free-text KD to predict affective states (for example, the results presented in \cite{keystroke-dynamics2}).
+
+As can be seen in Figure \ref{accuracies-kappas}, both accuracies are well above 70\% which is considered a very good value in works pertaining to Affective Computing. In the case of the Kappa Coefficients (Figure \ref{accuracies-kappas}), it is usual to see values below 0.2 in methods involving free-text KD. In this case, both Kappas were close to 0.5. Specifically, the average and the standard deviation of the accuracies for the boredom and frustration classifiers were 83.81\%+/-5.51\%, and 74.00\%+/-6.07\%, respectively; and for the average and the standard deviation of the Kappas, they were 0.581+/-0.168 and 0.5+/-0.111, respectively. This means that, although both classifiers performed very well, the proposed method is more suitable for the classification of boredom.
+
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=10cm]{accuracy-kappa.png}}
+  \label{accuracies-kappas}
+  \caption{Accuracies and Kappa Coefficients for the Boredom and Frustration Classifiers}
+\end{figure}
+
+\section{Conclusion}
+
+The proposed method in this work obtained very satisfactory results. It is usual for a classification method based on free-text KD to obtain accuracies and kappas below to their counterparts of fixed-text KD, and in this work the results obtained were similar to those works based on fixe-text KD. A possible explanation of this would be the addition of the MD features, and the additional preprocessing performed on the feature vectors.
+
+As mentioned before, in the beginning of the Experiment, the proposed method was obtaining bad results, somewhat comparable to those usually obtained in methods based on free-text KD. However, after the optimization process (determining a subset of features), the results improved.
 
 \begin{thebibliography}{4}
+  
+\bibitem{affective-computing} Picard, R.W.: Affective computing. MIT press (2000)
+  
+\bibitem{facial-expressions} El Kaliouby, R., and Robinson, P.: Real-time inference of complex mental states from facial expressions and head gestures. Real-time vision for human-computer interaction. Springer US, 181--200 (2005)
 
-\bibitem{jour} Smith, T.F., Waterman, M.S.: Identification of Common Molecular
-Subsequences. J. Mol. Biol. 147, 195--197 (1981)
+\bibitem{affective-simulation} Becker-Asano, C., and Wachsmuth, I.: Affect simulation with primary and secondary emotions. Intelligent Virtual Agents. Springer Berlin Heidelberg (2008)
 
-\bibitem{lncschap} May, P., Ehrlich, H.C., Steinke, T.: ZIB Structure Prediction Pipeline:
-Composing a Complex Biological Workflow through Web Services. In: Nagel,
-W.E., Walter, W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128,
-pp. 1148--1158. Springer, Heidelberg (2006)
+\bibitem{autotutor} D'Mello, S., et al.: AutoTutor detects and responds to learners affective and cognitive states. Workshop on Emotional and Cognitive Issues at the International Conference on Intelligent Tutoring Systems (2008)
 
-\bibitem{book} Foster, I., Kesselman, C.: The Grid: Blueprint for a New Computing
-Infrastructure. Morgan Kaufmann, San Francisco (1999)
+\bibitem{zoning-out} Drummond, J., and Litman, D.: In the zone: Towards detecting student zoning out using supervised machine learning. Intelligent Tutoring Systems. Springer Berlin Heidelberg (2010)
 
-\bibitem{proceeding1} Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C.: Grid
-Information Services for Distributed Resource Sharing. In: 10th IEEE
-International Symposium on High Performance Distributed Computing, pp.
-181--184. IEEE Press, New York (2001)
+\bibitem{intrusive1} Jing, Z., and Barreto, A.: Stress detection in computer users based on digital signal processing of noninvasive physiological variables. Engineering in Medicine and Biology Society, 2006. EMBS'06. 28th Annual International Conference of the IEEE. IEEE (2006)
 
-\bibitem{proceeding2} Foster, I., Kesselman, C., Nick, J., Tuecke, S.: The Physiology of the
-Grid: an Open Grid Services Architecture for Distributed Systems
-Integration. Technical report, Global Grid Forum (2002)
+\bibitem{intrusive2} D'Mello, S., et al.: Integrating affect sensors in an intelligent tutoring system. Affective Interactions: The Computer in the Affective Loop Workshop (2005)
 
-\bibitem{url} National Center for Biotechnology Information, \url{http://www.ncbi.nlm.nih.gov}
+\bibitem{intrusive3} Arroyo, I., et al.: Emotion Sensors Go To School. AIED. Vol. 200 (2009)
 
+\bibitem{free-text-fixed-text} Gunetti, D., and Picardi, C.: Keystroke analysis of free text. ACM Transactions on Information and System Security (TISSEC) 8.3, 312--347 (2005)
+
+\bibitem{fixed-is-better} Janakiraman, R., and Sim, T.: Keystroke dynamics in a general setting. Advances in Biometrics. Springer Berlin Heidelberg, 584--593 (2007)
+
+\bibitem{emotions-novices-programming} Bosch, N., D'Mello, S., and Mills, C.: What Emotions Do Novices Experience during Their First Computer Programming Learning Session. Artificial Intelligence in Education. Springer Berlin Heidelberg (2013)
+
+\bibitem{emotions-novices-programming2} Rodrigo, M.M.T., et al.: Affective and behavioral predictors of novice programmer achievement. ACM SIGCSE Bulletin 41.3 156--160 (2009)
+
+\bibitem{keystroke-dynamics1} Epp, C., Lippold, M., and Mandryk, R.L.: Identifying emotional states using keystroke dynamics. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. ACM (2011)
+
+\bibitem{keystroke-dynamics2} Bixler, R., and D'Mello, S.: Detecting boredom and engagement during writing with keystroke analysis, task appraisals, and stable traits. Proceedings of the 2013 International Conference on Intelligent User Interfaces. ACM (2013)
+
+\bibitem{mouse-dynamics1} Salmeron-Majadas, S., Santos, O.C., and Boticario, J.G.: Exploring indicators from keyboard and mouse interactions to predict the user affective state. Proceedings of the 7th International Conference on Educational Data Mining (EDM'14) (2014)
+
+\bibitem{mouse-dynamics2} Bakhtiyari, K., and Husain, H.: Fuzzy Model in Human Emotions Recognition. 12th WSEAS International Conference on Applications of Computer Engineering (ACE '13) 77--82 (2014)
+
+\bibitem{keystroke-mouse-review} Kolakowska, A.: A review of emotion recognition methods based on keystroke dynamics and mouse movements. 6th International Conference on on Human System Interaction (HSI). IEEE (2013)
+  
+\bibitem{affect-aware-general1} Woolf, B., et al.: Affect-aware tutors: recognising and responding to student affect. International Journal of Learning Technology 4.3 129--164 (2009)
+  
+\bibitem{affect-aware-general2} San Pedro, M.O.Z., et al.: Towards an understanding of affect and knowledge from student interaction with an Intelligent Tutoring System. Artificial Intelligence in Education. Springer Berlin Heidelberg (2013)
+
+\bibitem{affect-aware-general3} Wang, C.Y., et al.: Design an empathic virtual human to encourage and persuade learners in e-learning systems. Proceedings of the first ACM International Workshop on Multimedia Technologies for Distance Learning. ACM (2009)
+
+\bibitem{esm} Larson, R., and Csikszentmihalyi, M.: The experience sampling method. New Directions for Methodology of Social & Behavioral Science (1983)
+
+\bibitem{digraph-trigraph} Sim, T., and Janakiraman, R.: Are digraphs good for free-text keystroke dynamics. IEEE Conference on Computer Vision and Pattern Recognition, 2007 (CVPR'07). IEEE (2007)
+  
 \end{thebibliography}
 
-
-\section*{Appendix: Springer-Author Discount}
-
-LNCS authors are entitled to a 33.3\% discount off all Springer
-publications. Before placing an order, the author should send an email, 
-giving full details of his or her Springer publication,
-to \url{orders-HD-individuals@springer.com} to obtain a so-called token. This token is a
-number, which must be entered when placing an order via the Internet, in
-order to obtain the discount.
-
-\section{Checklist of Items to be Sent to Volume Editors}
-Here is a checklist of everything the volume editor requires from you:
-
-
-\begin{itemize}
-\settowidth{\leftmargin}{{\Large$\square$}}\advance\leftmargin\labelsep
-\itemsep8pt\relax
-\renewcommand\labelitemi{{\lower1.5pt\hbox{\Large$\square$}}}
-
-\item The final \LaTeX{} source files
-\item A final PDF file
-\item A copyright form, signed by one author on behalf of all of the
-authors of the paper.
-\item A readme giving the name and email address of the
-corresponding author.
-\end{itemize}
 \end{document}

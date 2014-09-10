@@ -1,0 +1,285 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage{url}
+\urldef{\mailsa}\path|{amherag, mario}@tectijuana.edu.mx,alejandra.mancilla@gmail.com|
+%\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+%\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+%\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Amaury Hernandez-Aguila%
+\and Mario Garcia-Valdez\and Alejandra Mancilla}
+%
+\authorrunning{Affective States in Software Programming: Classification of Individuals based on their Keystroke and Mouse
+Dynamics}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{Instituto Tecnológico de Tijuana\\
+Calzada Tecnologico s/n, Tijuana, Mexico\\
+\mailsa\\
+\mailsb\\
+\mailsc\\
+\url{}}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Lecture Notes in Computer Science}
+\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+The abstract should summarize the contents of the paper and should
+contain at least 70 and at most 150 words. It should be written using the
+\emph{abstract} environment.
+\keywords{We would like to encourage you to list your keywords within
+the abstract section}
+\end{abstract}
+
+
+\section{Introduction}
+ 
+The recognition, and simulation of human affects are becoming important fields of study, as many researchers have demonstrated that affective computers can provide better performance in assisting humans, and enhance a computers' abilities to make decisions \cite{affective-computing}. There are works describing different approaches for the recognition and simulation of affective states in human beings. For example, El Kaliouby, R., and Robinson, P. \cite{facial-expressions} proposed a system based on Dynamic Bayesian Networks that attained at recognizing affective states from a video stream of facial expressions and head gestures in real-time. As an example of the simulation of affective states, Becker-Asano, C., and Wachsmuth, I. \cite{affective-simulation} created MAX, a virtual human that simulates emotions in congruence to the mood of the person that interacts with it.
+
+It didn't take long before these techniques were implemented as part of Intelligent Learning Environments (ILE). With the promise of an enhanced learning experience, researchers began studying the consequences of creating affect-sensitive ILEs. D'Mello, S., et al. \cite{autotutor} present the development of an affect-sensitive Intelligent Tutoring System (ITS) called AutoTutor, which recognizes the emotions of a learner by monitoring conversational cues, gross body language, and facial features, and attempts to address the presence of negative emotional states with empathetic and motivational statements. Additionaly, Drummond, J., and Litman, D. \cite{zoning-out} explain a method based on machine learning classification models to asses if a student is zoning out during a spoken learning task.
+
+But as more ILEs embrace these methodologies and techniques pertaining to the field of study known as Affective Computing \cite{affective-computing}, a problem arises. In order to perform a recognition of the users' affective states, a sensor must be used to gather data. Frequently, these sensors can be considered as intrusive or invasive \cite{intrusive1} \cite{intrusive2} \cite{intrusive3}, and can disrupt the learning experience of a student. In this work, a method is proposed for the recognition of affective states based on Keystroke and Mouse Dynamics. Keyboard and mouse input devices should address the problem of the intrusive nature of most sensors, as the vast majority of an ILE's users should be familiarized with the use of this hardware equipment nowadays, and should not regard them as an abnormal factor in the learning environment. Other advantages are their low cost, and high accessibility.
+
+Research works related to Keystroke Dynamics (KD) are carried out either using fixed-texts, or free-texts \cite{free-text-fixed-text}. KD performed on fixed-texts involves the recognition of typing patterns when typing a preestablished fixed-length text, e.g., a password. In the other case, free-text KD achieves the recognition of typing patterns when typing an arbitrary-length text, e.g., a description of an item. However, as noted by Janakiraman, R., and Sim, T. \cite{fixed-is-better}, most of the research regarding KD is done on fixed-text input, the reason being that fixed-text KD usually yields better results than free-text KD. Yet, the authors of this work share the opinion with Janakiraman, R., and Sim, T., that it would be more useful if KD can handle free text as well as fixed text.
+
+As a proof of the usefulness of free-text KD, the method for the recognition of affective states presented in this work is performed in an ITS focused on the teaching of software programming, where students need to input arbitrary-length source code. In this ITS, a student is required to solve a series of programming excercises, and, according to a feature vector extracted from the processed Keystroke and Mouse Dynamics data, a classification of two affective states (boredom and frustration) of the student is accomplished. This classification involves determining if a student was experiencing or not, or being indifferent to, each of the two affective states during the resolution of the programming excercises. With the proposed method, an ILE can predict a learner's affective states, and create better user models in order to provide adaptive, affect-sensitive content.
+
+The structure of this work is organized as follows: Section \ref{related-work}
+
+\section{Related Work}
+\label{related-work}
+
+Bosch, N., D'Mello, S., and Mills, C. \cite{emotions-novices-programming} analyzed the relationship between affective states and performance of novice programmers when they were learning the basics of computer programming in the Python language. The results of their study indicated that the major emotions students experienced were engaged, confusion, frustration, and boredom, with 23\%, 22\%, 14\%, and 12\% of the students experiencing these emotions, respectively. It was useful to consider these results, as it gives evidence of what affective states to be targeted in order to obtain less biased data. For example, if a rare emotion was chosen, a classifier could opt to classify any feature vector as not experiencing such emotion. Nevertheless, the classifier would obtain terrific results, although the classifier would be terrible at determining if a feature vector was actually experiencing the given affective state.
+
+Similar to the previous work, Rodrigo, M.M.T., et al. \cite{emotions-novices-programming2} observed which affective states and behaviors relate to student's achievement within a Computer Science course. The authors found that confusion, boredom and egagement in IDE-related on-task conversation are associated with lower achievement.
+
+Although the use of Keystroke Dynamics (KD) can be found in several research works as a biometric measure, its use as a mechanism for identifying affective states is rare in comparison. Epp, C., Lippold, M., and Mandryk, R.L. \cite{keystroke-dynamics1} effectively used KD in conjunction with decision-tree classifiers for the identification of 15 affective states. Although their work was based on fixed-text KD, their decisions on how to extract a feature set from the data generated by the KD process was a great inspiration for the proposed method in this work. As for free-text KD, Bixler, R., and D'Mello, S. \cite{keystroke-dynamics2} present a method for the identification of boredom and engagement based on several classification models.
+
+Regarding Mouse Dynamics (MD), some research has been conducted for the identification of affective states, although, as with the case of KD, MD is mainly used as a biometric measure for authentication processes. Salmeron-Majadas, S., Santos, O.C., and Boticario, J.G. \cite{mouse-dynamics1} use both MD and KD to predict four affective states using five different classification algorithms. Bakhtiyari, K., and Husain, H. \cite{mouse-dynamics2} discuss a method based on fuzzy models for the recognition of emotions through KD, MD and touch-screen interactions. For a broad review of emotion recognition methods based on KD and MD, the work by Kolakowska, A. \cite{keystroke-mouse-review} is recommended.
+
+It has to be mentioned that a numerous list of works pertaining to affect-aware ILEs exists, but the following remarkable works are presented: Woolf, B., et al. \cite{affect-aware-general1} describe an approach to redress the cognitive versus affective imbalance in teaching systems; San Pedro, M.O.Z., et al. \cite{affect-aware-general2} present a method based on classifiers that predicts student affect and knowledge; and lastly, Wang, C.Y., et al. \cite{affect-aware-general3} propose an approach to develop an emotionally interactive learning system, where learners can express their emotions by mouse-clicking.
+
+\section{Proposed Method}
+\label{proposed-method}
+
+An Intelligent Tutoring System (ITS) was built to obtain the necessary data (it can be found online at http://app.protoboard.org/). The ITS's course begins with three introductory videos that explain the fundamentals of programming in Python, and how to solve the programming exercises in the course. What follows after these videos are ten programming exercises, that the students need to solve in a consecutive manner.
+
+In Figure \ref{protoboard}, the interface of this ITS is presented. On the left, a navigation tree is shown, where students can click on the different learning objects that the course contains. On the right, a text processor is embedded, where students can try to solve the programming exercise described below.
+
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=12.2cm]{protoboard.png}}
+  \label{protoboard}
+  \caption{Interface of the Intelligent Tutoring System}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Capturing the Keystroke and Mouse Data}
+
+While a student is trying to solve an exercise, a script coded in JavaScript is running in the background, which captures every keystroke, mouse movement and mouse button press. Each capture of these events records a date in milliseconds (using the method getTime() of JavaScript's built-in object Date) that describes when the event occurred. If the event is a keystroke, the script captures what key was specifically pressed (a JavaScript key code), and what type of event occurred (it can be either a key-down or a key-up event). If it is an event related to a mouse button press, the key code of that button is recorded, as well as the type of event occurred (key-down or key-up). Finally, if the event was a mouse movement, the mouse coordinates inside of the web browser is recorded. The script monitors the mouse position every 100 milliseconds, and if the position has changed, it records the new position.
+
+\subsubsection{Capturing the Affective States}
+
+In order to determine what affective states a student was experiencing, an Experience Sampling Method (ESM) was used \cite{esm}. After the students successfully solve a programming exercise, they are presented with an ESM survey that asks what they were feeling during their solving of the exercise. A very brief description is given about what to do in this survey, followed by two statements the students need to answer according to how they were feeling. As an example, the statement ''I was feeling frustrated'' is presented, and a student needs to answer either ''Strongly agree,'' ''Agree,'' ''Neutral,'' ''Disagree,'' and ''Strongly Disagree.'' The full ESM survey is presented in Figure \ref{esm-survey}.
+
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=12.2cm]{esm.png}}
+  \label{esm-survey}
+  \caption{Experience Sampling Method}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Preprocessing of the Keystroke and Mouse Data}
+
+The raw data obtained from the JavaScript script needs to be preprocessed in a way that results in a feature vector. Basically, this preprocessing consists in measuring the delays between key-down or key-up events of the keystrokes and mouse button presses a student performed during an exercise. The averages and standard deviations are calculated for each of these delays. To calculate these delays, the keystrokes are grouped in digraphs and trigraphs, as it is a common practice when dealing with Keystroke Dynamics \cite{digraph-trigraph}.
+
+As most of the mouse button presses performed by a web site user are left button clicks, only these button presses are considered. To calculate the average and standard deviations of these presses, the delays between key-down and a key-up events of the left button clicks are used.
+
+In addition to these averages and standard deviations of the delays between keystrokes and mouse button presses, the average and standard deviations of the number of total events contained in a digraph and a trigraph are calculated. These features are proposed and explained by Epp, C., Lippold, M., and Mandryk, R.L. in \cite{keystroke-dynamics1}. Most of the times, a digraph should contain four events, while a trigraph should contain six events. However, some times an individual can start a digraph or a trigraph before ending the previous one. This additional features represent these particular cases, and could be meaningful for the estimation of an individual's affective states.
+
+Regarding the mouse movements, the average and standard deviation of the duration of each mouse movement are calculated, and the averages and standard deviations of the movements in the X and Y axes
+
+%% Se construyó un ITS basado en Protoboard...
+%% Este ITS consiste en 10 ejercicios y etc...
+%% (screenshot de Protoboard)
+%% Se capturan los KD y MD usando un script...
+%% (código?)
+%% Para determinar qué estados afectivos tenían los usuarios se uso un ESM...
+%% (screenshot)
+%% Los datos generados son preprocesados de esta forma (sin detalle)...
+%% Los estados afectivos se preprocesan de esta forma...
+%% Se obtiene un vector de 39 características...
+%% (tabla)
+%% Se obtienen 2 labels, una para frustración y otra para aburrimiento...
+%% También se usa el número de intentos...
+%% Se usa este vector de características como entrada a un clasificador de Naive Bayes...
+
+\begin{center}
+  \label{features}
+  \begin{table}
+    \caption{Tabla de características usadas}
+  \scriptsize
+  \begin{tabular}{| p{4cm} | p{8.2cm} |}
+    \hline
+    Nombre & Descripción \\ \hline
+    2G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da (keydown) tecla en un dígrafo\\ \hline
+    2G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+    2G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+    tecla en un dígrafo \\ \hline
+    2G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    2G\_1KeyLat\_MEAN &  Tiempo promedio entre la 1ra (keyup) y el
+    siguiente keydown en un dígrafo \\ \hline
+    2G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+    2G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+    tecla en un dígrafo \\ \hline
+    2G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    2G\_Dur\_MEAN & Tiempo promedio entre el primer keydown y el último
+    keyup de un dígrafo \\ \hline
+    2G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    2G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+    un dígrafo \\ \hline
+    2G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da
+    (keydown) teclas de un trígrafo \\ \hline
+    3G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+    tecla en un trígrafo \\ \hline
+    3G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_1KeyLat\_MEAN & Tiempo promedio entre el keyup de la 1ra tecla y
+    el siguiente keydown en un trígrafo\\ \hline
+    3G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_2D2D\_MEAN & Tiempo promedio entre la 2da (keydown) y 3ra
+    (keydown) teclas en un trígrafo \\ \hline
+    3G\_2D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+    tecla en un trígrafo \\ \hline
+    3G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_2KeyLat\_MEAN & Tiempo promedio entre el keyup de la 2da tecla y
+    el siguiente keydown en un trígrafo\\ \hline
+    3G\_2KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_3Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la
+    última tecla en un trígrafo \\ \hline
+    3G\_3Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_Dur\_MEAN & Tiempo promedio entre el keydown de la 1ra tecla y
+    el último keyup en un trígrafo \\ \hline
+    3G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    3G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+    un trígrafo \\ \hline
+    3G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+    Mouse\_Presses\_Dur\_MEAN & Tiempo promedio entre el keydown y keyup
+    de algún botón del ratón \\ \hline
+    Mouse\_Presses\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    Mouse\_Movement\_Dur\_MEAN & Tiempo promedio de todos los movimientos
+    del ratón\\ \hline
+    Mouse\_Movement\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+    Mouse\_Movement\_X\_MEAN & Promedio de la distancia recorrida en
+    pixeles en la coordenada X por el ratón \\ \hline
+    Mouse\_Movement\_X\_SD & Desviación estándar de la característica anterior \\ \hline
+    Mouse\_Movement\_Y\_MEAN & Promedio de la distancia recorrida en
+    pixeles en la coordenada Y por el ratón \\ \hline
+    Mouse\_Movement\_Y\_SD & Desviación estándar de la característica anterior \\ \hline
+    Attempts & Número de intentos requeridos para llegar a la
+    solución del ejercicio \\ \hline
+  \end{tabular}
+  \end{table}
+\end{center}
+
+\section{Experiment}
+
+Lorem ipsum dolor sit amet...
+
+\section{Results}
+
+Lorem ipsum dolor sit amet...
+
+\section{Conclusion}
+
+Lorem ipsum dolor sit amet...
+
+
+
+\begin{thebibliography}{4}
+  
+\bibitem{affective-computing} Picard, R.W.: Affective computing. MIT press (2000)
+  
+\bibitem{facial-expressions} El Kaliouby, R., and Robinson, P.: Real-time inference of complex mental states from facial expressions and head gestures. Real-time vision for human-computer interaction. Springer US, 181--200 (2005)
+
+\bibitem{affective-simulation} Becker-Asano, C., and Wachsmuth, I.: Affect simulation with primary and secondary emotions. Intelligent Virtual Agents. Springer Berlin Heidelberg (2008)
+
+\bibitem{autotutor} D'Mello, S., et al.: AutoTutor detects and responds to learners affective and cognitive states. Workshop on Emotional and Cognitive Issues at the International Conference on Intelligent Tutoring Systems (2008)
+
+\bibitem{zoning-out} Drummond, J., and Litman, D.: In the zone: Towards detecting student zoning out using supervised machine learning. Intelligent Tutoring Systems. Springer Berlin Heidelberg (2010)
+
+\bibitem{intrusive1} Jing, Z., and Barreto, A.: Stress detection in computer users based on digital signal processing of noninvasive physiological variables. Engineering in Medicine and Biology Society, 2006. EMBS'06. 28th Annual International Conference of the IEEE. IEEE (2006)
+
+\bibitem{intrusive2} D'Mello, S., et al.: Integrating affect sensors in an intelligent tutoring system. Affective Interactions: The Computer in the Affective Loop Workshop (2005)
+
+\bibitem{intrusive3} Arroyo, I., et al.: Emotion Sensors Go To School. AIED. Vol. 200 (2009)
+
+\bibitem{free-text-fixed-text} Gunetti, D., and Picardi, C.: Keystroke analysis of free text. ACM Transactions on Information and System Security (TISSEC) 8.3, 312--347 (2005)
+
+\bibitem{fixed-is-better} Janakiraman, R., and Sim, T.: Keystroke dynamics in a general setting. Advances in Biometrics. Springer Berlin Heidelberg, 584--593 (2007)
+
+\bibitem{emotions-novices-programming} Bosch, N., D'Mello, S., and Mills, C.: What Emotions Do Novices Experience during Their First Computer Programming Learning Session. Artificial Intelligence in Education. Springer Berlin Heidelberg (2013)
+
+\bibitem{emotions-novices-programming2} Rodrigo, M.M.T., et al.: Affective and behavioral predictors of novice programmer achievement. ACM SIGCSE Bulletin 41.3 156--160 (2009)
+
+\bibitem{keystroke-dynamics1} Epp, C., Lippold, M., and Mandryk, R.L.: Identifying emotional states using keystroke dynamics. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. ACM (2011)
+
+\bibitem{keystroke-dynamics2} Bixler, R., and D'Mello, S.: Detecting boredom and engagement during writing with keystroke analysis, task appraisals, and stable traits. Proceedings of the 2013 International Conference on Intelligent User Interfaces. ACM (2013)
+
+\bibitem{mouse-dynamics1} Salmeron-Majadas, S., Santos, O.C., and Boticario, J.G.: Exploring indicators from keyboard and mouse interactions to predict the user affective state. Proceedings of the 7th International Conference on Educational Data Mining (EDM'14) (2014)
+
+\bibitem{mouse-dynamics2} Bakhtiyari, K., and Husain, H.: Fuzzy Model in Human Emotions Recognition. 12th WSEAS International Conference on Applications of Computer Engineering (ACE '13) 77--82 (2014)
+
+\bibitem{keystroke-mouse-review} Kolakowska, A.: A review of emotion recognition methods based on keystroke dynamics and mouse movements. 6th International Conference on on Human System Interaction (HSI). IEEE (2013)
+  
+\bibitem{affect-aware-general1} Woolf, B., et al.: Affect-aware tutors: recognising and responding to student affect. International Journal of Learning Technology 4.3 129--164 (2009)
+  
+\bibitem{affect-aware-general2} San Pedro, M.O.Z., et al.: Towards an understanding of affect and knowledge from student interaction with an Intelligent Tutoring System. Artificial Intelligence in Education. Springer Berlin Heidelberg (2013)
+
+\bibitem{affect-aware-general3} Wang, C.Y., et al.: Design an empathic virtual human to encourage and persuade learners in e-learning systems. Proceedings of the first ACM International Workshop on Multimedia Technologies for Distance Learning. ACM (2009)
+
+\bibitem{esm} Larson, R., and Csikszentmihalyi, M.: The experience sampling method. New Directions for Methodology of Social & Behavioral Science (1983)
+
+\bibitem{digraph-trigraph} Sim, T., and Janakiraman, R.: Are digraphs good for free-text keystroke dynamics. IEEE Conference on Computer Vision and Pattern Recognition, 2007 (CVPR'07). IEEE (2007)
+  
+\end{thebibliography}
+
+\end{document}
