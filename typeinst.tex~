@@ -62,8 +62,7 @@ Calzada Tecnologico s/n, Tijuana, Mexico\\
 The abstract should summarize the contents of the paper and should
 contain at least 70 and at most 150 words. It should be written using the
 \emph{abstract} environment.
-\keywords{We would like to encourage you to list your keywords within
-the abstract section}
+\keywords{Affective Computing, Intelligent Learning Environments, Keystroke Dynamics, Mouse Dynamics}
 \end{abstract}
 
 
@@ -102,7 +101,7 @@ An Intelligent Tutoring System (ITS) was built to obtain the necessary data (it 
 In Figure \ref{protoboard}, the interface of this ITS is presented. On the left, a navigation tree is shown, where students can click on the different learning objects that the course contains. On the right, a text processor is embedded, where students can try to solve the programming exercise described below.
 
 \begin{figure}[htp]
-  \centerline{\includegraphics[width=12.2cm]{protoboard.png}}
+  \centerline{\includegraphics[width=10cm]{protoboard.png}}
   \label{protoboard}
   \caption{Interface of the Intelligent Tutoring System}
 \end{figure}
@@ -118,7 +117,7 @@ While a student is trying to solve an exercise, a script coded in JavaScript is 
 In order to determine what affective states a student was experiencing, an Experience Sampling Method (ESM) was used \cite{esm}. After the students successfully solve a programming exercise, they are presented with an ESM survey that asks what they were feeling during their solving of the exercise. A very brief description is given about what to do in this survey, followed by two statements the students need to answer according to how they were feeling. As an example, the statement ''I was feeling frustrated'' is presented, and a student needs to answer either ''Strongly agree,'' ''Agree,'' ''Neutral,'' ''Disagree,'' and ''Strongly Disagree.'' The full ESM survey is presented in Figure \ref{esm-survey}.
 
 \begin{figure}[htp]
-  \centerline{\includegraphics[width=12.2cm]{esm.png}}
+  \centerline{\includegraphics[width=10cm]{esm.png}}
   \label{esm-survey}
   \caption{Experience Sampling Method}
 \end{figure}
@@ -133,106 +132,118 @@ As most of the mouse button presses performed by a web site user are left button
 
 In addition to these averages and standard deviations of the delays between keystrokes and mouse button presses, the average and standard deviations of the number of total events contained in a digraph and a trigraph are calculated. These features are proposed and explained by Epp, C., Lippold, M., and Mandryk, R.L. in \cite{keystroke-dynamics1}. Most of the times, a digraph should contain four events, while a trigraph should contain six events. However, some times an individual can start a digraph or a trigraph before ending the previous one. This additional features represent these particular cases, and could be meaningful for the estimation of an individual's affective states.
 
-Regarding the mouse movements, the average and standard deviation of the duration of each mouse movement are calculated, and the averages and standard deviations of the movements in the X and Y axes
+Regarding the mouse movements, the average and standard deviation of the duration of each mouse movement, and the averages and standard deviations of the movements in the X and Y axes, are calculated.
 
-%% Se construyó un ITS basado en Protoboard...
-%% Este ITS consiste en 10 ejercicios y etc...
-%% (screenshot de Protoboard)
-%% Se capturan los KD y MD usando un script...
-%% (código?)
-%% Para determinar qué estados afectivos tenían los usuarios se uso un ESM...
-%% (screenshot)
-%% Los datos generados son preprocesados de esta forma (sin detalle)...
-%% Los estados afectivos se preprocesan de esta forma...
-%% Se obtiene un vector de 39 características...
-%% (tabla)
-%% Se obtienen 2 labels, una para frustración y otra para aburrimiento...
-%% También se usa el número de intentos...
-%% Se usa este vector de características como entrada a un clasificador de Naive Bayes...
+Lastly, a final feature is added to preprocessing of the data. The ITS recorded how many attempts a student required before successfully solving an exercise. This number of attempts is included in the final feature vector.
 
-\begin{center}
-  \label{features}
-  \begin{table}
-    \caption{Tabla de características usadas}
-  \scriptsize
-  \begin{tabular}{| p{4cm} | p{8.2cm} |}
-    \hline
-    Nombre & Descripción \\ \hline
-    2G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da (keydown) tecla en un dígrafo\\ \hline
-    2G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
-    2G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
-    tecla en un dígrafo \\ \hline
-    2G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    2G\_1KeyLat\_MEAN &  Tiempo promedio entre la 1ra (keyup) y el
-    siguiente keydown en un dígrafo \\ \hline
-    2G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
-    2G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
-    tecla en un dígrafo \\ \hline
-    2G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    2G\_Dur\_MEAN & Tiempo promedio entre el primer keydown y el último
-    keyup de un dígrafo \\ \hline
-    2G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    2G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
-    un dígrafo \\ \hline
-    2G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da
-    (keydown) teclas de un trígrafo \\ \hline
-    3G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
-    tecla en un trígrafo \\ \hline
-    3G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_1KeyLat\_MEAN & Tiempo promedio entre el keyup de la 1ra tecla y
-    el siguiente keydown en un trígrafo\\ \hline
-    3G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_2D2D\_MEAN & Tiempo promedio entre la 2da (keydown) y 3ra
-    (keydown) teclas en un trígrafo \\ \hline
-    3G\_2D2D\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
-    tecla en un trígrafo \\ \hline
-    3G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_2KeyLat\_MEAN & Tiempo promedio entre el keyup de la 2da tecla y
-    el siguiente keydown en un trígrafo\\ \hline
-    3G\_2KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_3Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la
-    última tecla en un trígrafo \\ \hline
-    3G\_3Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_Dur\_MEAN & Tiempo promedio entre el keydown de la 1ra tecla y
-    el último keyup en un trígrafo \\ \hline
-    3G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    3G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
-    un trígrafo \\ \hline
-    3G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
-    Mouse\_Presses\_Dur\_MEAN & Tiempo promedio entre el keydown y keyup
-    de algún botón del ratón \\ \hline
-    Mouse\_Presses\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    Mouse\_Movement\_Dur\_MEAN & Tiempo promedio de todos los movimientos
-    del ratón\\ \hline
-    Mouse\_Movement\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
-    Mouse\_Movement\_X\_MEAN & Promedio de la distancia recorrida en
-    pixeles en la coordenada X por el ratón \\ \hline
-    Mouse\_Movement\_X\_SD & Desviación estándar de la característica anterior \\ \hline
-    Mouse\_Movement\_Y\_MEAN & Promedio de la distancia recorrida en
-    pixeles en la coordenada Y por el ratón \\ \hline
-    Mouse\_Movement\_Y\_SD & Desviación estándar de la característica anterior \\ \hline
-    Attempts & Número de intentos requeridos para llegar a la
-    solución del ejercicio \\ \hline
-  \end{tabular}
-  \end{table}
-\end{center}
+The final feature vector consists of 39 features.
+
+%% \begin{center}
+%%   \label{feature-vector}
+%%   \begin{table}
+%%     \caption{Tabla de características usadas}
+%%   \tiny
+%%   \begin{tabular}{| p{4cm} | p{8.2cm} |}
+%%     \hline
+%%     Nombre & Descripción \\ \hline
+%%     2G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da (keydown) tecla en un dígrafo\\ \hline
+%%     2G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+%%     tecla en un dígrafo \\ \hline
+%%     2G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_1KeyLat\_MEAN &  Tiempo promedio entre la 1ra (keyup) y el
+%%     siguiente keydown en un dígrafo \\ \hline
+%%     2G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+%%     tecla en un dígrafo \\ \hline
+%%     2G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_Dur\_MEAN & Tiempo promedio entre el primer keydown y el último
+%%     keyup de un dígrafo \\ \hline
+%%     2G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     2G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+%%     un dígrafo \\ \hline
+%%     2G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1D2D\_MEAN & Tiempo promedio entre la 1ra (keydown) y 2da
+%%     (keydown) teclas de un trígrafo \\ \hline
+%%     3G\_1D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 1ra
+%%     tecla en un trígrafo \\ \hline
+%%     3G\_1Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_1KeyLat\_MEAN & Tiempo promedio entre el keyup de la 1ra tecla y
+%%     el siguiente keydown en un trígrafo\\ \hline
+%%     3G\_1KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2D2D\_MEAN & Tiempo promedio entre la 2da (keydown) y 3ra
+%%     (keydown) teclas en un trígrafo \\ \hline
+%%     3G\_2D2D\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la 2da
+%%     tecla en un trígrafo \\ \hline
+%%     3G\_2Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_2KeyLat\_MEAN & Tiempo promedio entre el keyup de la 2da tecla y
+%%     el siguiente keydown en un trígrafo\\ \hline
+%%     3G\_2KeyLat\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_3Dur\_MEAN & Tiempo promedio entre el keydown y keyup de la
+%%     última tecla en un trígrafo \\ \hline
+%%     3G\_3Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_Dur\_MEAN & Tiempo promedio entre el keydown de la 1ra tecla y
+%%     el último keyup en un trígrafo \\ \hline
+%%     3G\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     3G\_NumEvents\_MEAN & Promedio del número de eventos contenidos en
+%%     un trígrafo \\ \hline
+%%     3G\_NumEvents\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Presses\_Dur\_MEAN & Tiempo promedio entre el keydown y keyup
+%%     de algún botón del ratón \\ \hline
+%%     Mouse\_Presses\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_Dur\_MEAN & Tiempo promedio de todos los movimientos
+%%     del ratón\\ \hline
+%%     Mouse\_Movement\_Dur\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_X\_MEAN & Promedio de la distancia recorrida en
+%%     pixeles en la coordenada X por el ratón \\ \hline
+%%     Mouse\_Movement\_X\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Mouse\_Movement\_Y\_MEAN & Promedio de la distancia recorrida en
+%%     pixeles en la coordenada Y por el ratón \\ \hline
+%%     Mouse\_Movement\_Y\_SD & Desviación estándar de la característica anterior \\ \hline
+%%     Attempts & Número de intentos requeridos para llegar a la
+%%     solución del ejercicio \\ \hline
+%%   \end{tabular}
+%%   \end{table}
+%% \end{center}
+
+\subsubsection{Preprocessing of the Affective States}
+
+The answers ''Strongly agree,'' and ''Agree'' were grouped into a single ''Agree'' class. The same was performed for the answers ''Strongly disagree,'' and ''Disagree.'' As a result, the feature vectors are now classified as either ''Agree,'' ''Neutral,'' or ''Disagree'', for each of the two affective states. The reason behind this decision is that the classifiers were performing poorly for such a big set of possible classes.
+
+\subsubsection{Classification}
+
+The feature vectors need to undergo an optimization process. This process consists on using a Genetic Algorithm to determine a subset of features that facilitates a classifier to obtain good results (this is explained in more detail in Section \ref{experiment}). The resulting feature vector is used as input to a classifier based on the k-Nearest Neighbors (k-NN) algorithm. In the end, two classifiers are trained: one for the frustration affective state, and another one for boredom.
 
 \section{Experiment}
+\label{experiment}
 
-Lorem ipsum dolor sit amet...
+55 students with basic knowledge in software programming were asked to take the course presented in the ITS. Their participation generated a total of 142 feature vectors, meaning that each student solved an average of 2.58 exercises. The 39 features were associated with the answers of the ESM surveys the students had to answer after each exercise. As a result, the 142 feature vectors were used to train a classifier for each affective state. Each of these classifiers have the task of estimating if a given feature vector corresponds to either an ''Agree,'' ''Neutral,'' or ''Disagree'' class, for the frustration and boredom affective states.
+
+At a first attempt at training the classifiers, bad results were being obtained. Accuracies of 50\% and below were frequent with each of the attempts, as well as Kappa Coefficients below 0.1.
+
+The solution to this problem was performing a selection of a subset of features in the feature vector. The hypothesis was that the classifiers were performing bad because of the high number of features, and because of the possible irrelevant features, i.e., features that don't help the classifier to improve its results. This preprocessing of the feature vector was done with RapidMiner's Optimize Selection operator based in Genetic Algorithms. Even with a population size of 700, the training and validation process had to be run several times before determining a satisfactory subset of features for both classifiers.
+
+For the validation of the results, 10-Fold Cross Validation was used.
 
 \section{Results}
 
-Lorem ipsum dolor sit amet...
+The results obtained with this method are very satisfactory, considering free-text KD was used. The accuracies and Kapppa Coefficients obtained are close to what is usually obtained in fixed-text KD methods (for example, the results presented in \cite{keystroke-dynamics1}), and far superior to other research works involving free-text KD to predict affective states (for example, the results presented in \cite{keystroke-dynamics2}).
+
+As can be seen in Figure \ref{accuracies-kappas}, both accuracies are well above 70\% which is considered a very good value in works pertaining to Affective Computing. In the case of the Kappa Coefficients (Figure \ref{accuracies-kappas}), it is usual to see values below 0.2 in methods involving free-text KD. In this case, both Kappas were close to 0.5. Specifically, the average and the standard deviation of the accuracies for the boredom and frustration classifiers were 83.81\%+/-5.51\%, and 74.00\%+/-6.07\%, respectively; and for the average and the standard deviation of the Kappas, they were 0.581+/-0.168 and 0.5+/-0.111, respectively. This means that, although both classifiers performed very well, the proposed method is more suitable for the classification of boredom.
+
+\begin{figure}[htp]
+  \centerline{\includegraphics[width=10cm]{accuracy-kappa.png}}
+  \label{accuracies-kappas}
+  \caption{Accuracies and Kappa Coefficients for the Boredom and Frustration Classifiers}
+\end{figure}
 
 \section{Conclusion}
 
-Lorem ipsum dolor sit amet...
+The proposed method in this work obtained very satisfactory results. It is usual for a classification method based on free-text KD to obtain accuracies and kappas below to their counterparts of fixed-text KD, and in this work the results obtained were similar to those works based on fixe-text KD. A possible explanation of this would be the addition of the MD features, and the additional preprocessing performed on the feature vectors.
 
-
+As mentioned before, in the beginning of the Experiment, the proposed method was obtaining bad results, somewhat comparable to those usually obtained in methods based on free-text KD. However, after the optimization process (determining a subset of features), the results improved.
 
 \begin{thebibliography}{4}
   
